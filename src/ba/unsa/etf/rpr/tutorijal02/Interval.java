@@ -28,6 +28,13 @@ public class Interval {
         }
         return false;
     }
+    public boolean isIn(double tacka){
+
+        if(pocetnaTacka<tacka && krajnjaTacka>tacka) return true;
+        return false;
+
+
+    }
 
 
 
