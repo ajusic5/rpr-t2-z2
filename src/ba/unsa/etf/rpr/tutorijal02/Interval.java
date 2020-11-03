@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal02;
 
+import java.util.Objects;
+
 public class Interval {
 
     private double pocetnaTacka;
@@ -20,6 +22,13 @@ public class Interval {
         daLiPocetnaTackaPripada=false;
         daLiKrajnjaTackaPripada=false;
     }
+    public boolean isNull(){
+        if (Objects.equals(pocetnaTacka, krajnjaTacka)) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
