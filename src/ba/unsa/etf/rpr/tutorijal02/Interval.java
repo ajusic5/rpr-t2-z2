@@ -65,6 +65,22 @@ public class Interval {
 
     }
 
+    @Override
+    public boolean equals(Object o){
+
+        Interval i=new Interval();
+        i.pocetnaTacka=((Interval)o).pocetnaTacka;
+        i.krajnjaTacka=((Interval)o).krajnjaTacka;
+        i.daLiPocetnaTackaPripada=((Interval)o).daLiPocetnaTackaPripada;
+        i.daLiKrajnjaTackaPripada=((Interval)o).daLiKrajnjaTackaPripada;
+
+        if(i.pocetnaTacka==this.pocetnaTacka && i.krajnjaTacka==this.krajnjaTacka && i.daLiPocetnaTackaPripada==this.daLiPocetnaTackaPripada && i.daLiKrajnjaTackaPripada==this.daLiKrajnjaTackaPripada)
+            return true;
+        return false;
+
+    }
+
+
 
 
 
