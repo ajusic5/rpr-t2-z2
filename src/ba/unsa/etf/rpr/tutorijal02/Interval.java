@@ -14,6 +14,12 @@ public class Interval {
         daLiPocetnaTackaPripada=daLiPocetnaPripada;
         daLiKrajnjaTackaPripada=daLiKrajnjaPripada;
     }
+    public Interval(){
+        pocetnaTacka=0;
+        krajnjaTacka=0;
+        daLiPocetnaTackaPripada=false;
+        daLiKrajnjaTackaPripada=false;
+    }
 
 
 
