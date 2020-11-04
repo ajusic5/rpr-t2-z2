@@ -80,9 +80,54 @@ public class Interval {
 
     }
 
+    @Override
+    public String toString() {
+
+        if(pocetnaTacka==krajnjaTacka && daLiKrajnjaTackaPripada && daLiKrajnjaTackaPripada)
+           return "[]";
+        if(pocetnaTacka==krajnjaTacka && daLiKrajnjaTackaPripada && !daLiKrajnjaTackaPripada)
+            return "[)";
+        if(pocetnaTacka==krajnjaTacka && !daLiKrajnjaTackaPripada && daLiKrajnjaTackaPripada)
+            return "(]";
+        if(pocetnaTacka==krajnjaTacka && !daLiKrajnjaTackaPripada && !daLiKrajnjaTackaPripada)
+            return "()";
 
 
+        if(daLiPocetnaTackaPripada && daLiKrajnjaTackaPripada) {
+            String s="[";
+            s+= this.pocetnaTacka;
+            s+= ",";
+            s+=this.krajnjaTacka;
+            s+= "]";
+            return s;
+        }
+        if(!daLiPocetnaTackaPripada && daLiKrajnjaTackaPripada) {
+            String s="(";
+            s+= this.pocetnaTacka;
+            s+= ",";
+            s+=this.krajnjaTacka;
+            s+= "]";
+            return s;
+        }
+        if(daLiPocetnaTackaPripada && !daLiKrajnjaTackaPripada) {
+            String s="[";
+            s+= this.pocetnaTacka;
+            s+= ",";
+            s+=this.krajnjaTacka;
+            s+= ")";
+            return s;
+        }
+
+        if(!daLiPocetnaTackaPripada && !daLiKrajnjaTackaPripada) {
+            String s="(";
+            s+= this.pocetnaTacka;
+            s+= ",";
+            s+=this.krajnjaTacka;
+            s+= ")";
+            return s;
+        }
 
 
-
+        return "";
+    }
 }
