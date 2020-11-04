@@ -38,30 +38,92 @@ public class Interval {
     }
     public Interval intersect(Interval i){
 
-        if(this.krajnjaTacka<i.pocetnaTacka || this.pocetnaTacka>i.krajnjaTacka) return new Interval(); // intervali se ne presijecaju
+        if(krajnjaTacka<i.pocetnaTacka || i.krajnjaTacka<pocetnaTacka) return new Interval(); // intervali se ne presijecaju
 
-        if(this.pocetnaTacka==i.pocetnaTacka && this.krajnjaTacka==i.krajnjaTacka){
+        if(pocetnaTacka==i.pocetnaTacka && krajnjaTacka==i.krajnjaTacka){ //intervali se poklapaju
 
-            if(this.daLiPocetnaTackaPripada==true && i.daLiPocetnaTackaPripada==true && this.daLiKrajnjaTackaPripada==true && i.daLiKrajnjaTackaPripada==true)
-                return new Interval(i.pocetnaTacka,i.krajnjaTacka,true,true);
+            if(daLiPocetnaTackaPripada && i.daLiPocetnaTackaPripada && daLiKrajnjaTackaPripada && i.daLiKrajnjaTackaPripada)
+                return new Interval(pocetnaTacka,krajnjaTacka,true,true);
 
-            if(this.daLiPocetnaTackaPripada==true && i.daLiPocetnaTackaPripada==false && this.daLiKrajnjaTackaPripada==true && i.daLiKrajnjaTackaPripada==false)
-                return new Interval(i.pocetnaTacka,i.krajnjaTacka,true,false);
+            if((!daLiPocetnaTackaPripada || i.daLiPocetnaTackaPripada) && daLiKrajnjaTackaPripada && i.daLiKrajnjaTackaPripada)
+                return  new Interval(pocetnaTacka,krajnjaTacka,false, true);
 
-            if(this.daLiPocetnaTackaPripada==false && i.daLiPocetnaTackaPripada==true && this.daLiKrajnjaTackaPripada==false && i.daLiKrajnjaTackaPripada==true)
-                return new Interval(i.pocetnaTacka,i.krajnjaTacka,false,true);
+            if(daLiPocetnaTackaPripada && i.daLiPocetnaTackaPripada && (!daLiKrajnjaTackaPripada || !i.daLiKrajnjaTackaPripada))
+                return new Interval(pocetnaTacka,krajnjaTacka,true, false);
+
+            return new Interval(pocetnaTacka,krajnjaTacka,false,false);
+        }
+
+        if(krajnjaTacka==i.pocetnaTacka){
+
+            if(daLiKrajnjaTackaPripada && i.daLiPocetnaTackaPripada)
+                return new Interval(i.pocetnaTacka,krajnjaTacka, true, true);
+
+            return new Interval(i.pocetnaTacka,krajnjaTacka, false,false);
+        }
+        if(i.krajnjaTacka==pocetnaTacka){
+
+            if(i.daLiKrajnjaTackaPripada && daLiPocetnaTackaPripada)
+                return new Interval(pocetnaTacka,i.krajnjaTacka, true, true);
+
+            return new Interval(pocetnaTacka,i.krajnjaTacka, false,false);
+        }
+
+        if(pocetnaTacka>i.pocetnaTacka && krajnjaTacka<i.krajnjaTacka){
+
+            if(daLiPocetnaTackaPripada  && daLiKrajnjaTackaPripada )
+                return new Interval(pocetnaTacka,krajnjaTacka,true,true);
+
+            if( !daLiPocetnaTackaPripada &&  daLiKrajnjaTackaPripada)
+                return new Interval(pocetnaTacka,krajnjaTacka,false,true);
+
+            if( daLiPocetnaTackaPripada && !daLiKrajnjaTackaPripada)
+                return new Interval(pocetnaTacka,krajnjaTacka,true,false);
+
+            return new Interval(pocetnaTacka,krajnjaTacka,false,false);
 
         }
 
-        if(this.pocetnaTacka<i.pocetnaTacka && this.krajnjaTacka>i.krajnjaTacka) return new Interval(i.pocetnaTacka,i.krajnjaTacka,i.daLiPocetnaTackaPripada,i.daLiKrajnjaTackaPripada);
+        if(pocetnaTacka<i.pocetnaTacka && krajnjaTacka>i.krajnjaTacka){
 
-        if(i.pocetnaTacka<this.pocetnaTacka && i.krajnjaTacka>this.krajnjaTacka) return new Interval(this.pocetnaTacka,this.krajnjaTacka, this.daLiPocetnaTackaPripada, this.daLiKrajnjaTackaPripada);
+            if(i.daLiPocetnaTackaPripada &&  i.daLiKrajnjaTackaPripada)
+                return new Interval(i.pocetnaTacka,i.krajnjaTacka,true,true);
 
-        //dva slučaja da je jedan interval podinterval drugog, na osnovu boolean vrijednosti određuje se da li je interval,poluinterval ili segment
+            if(!i.daLiPocetnaTackaPripada  && i.daLiKrajnjaTackaPripada )
+                return new Interval(i.pocetnaTacka,i.krajnjaTacka,false,true);
 
-        if(this.pocetnaTacka<i.pocetnaTacka) return new Interval(i.pocetnaTacka, this.krajnjaTacka, i.daLiPocetnaTackaPripada, this.daLiKrajnjaTackaPripada);
+            if(i.daLiPocetnaTackaPripada && !i.daLiKrajnjaTackaPripada )
+                return new Interval(i.pocetnaTacka,i.krajnjaTacka,true,false);
 
-        return new Interval(this.pocetnaTacka,i.krajnjaTacka,this.daLiPocetnaTackaPripada,i.daLiKrajnjaTackaPripada);
+            return new Interval(i.pocetnaTacka,i.krajnjaTacka,false,false);
+
+        } // dva slučaja kada je jedan interval podinterval drugog
+
+        if(pocetnaTacka<i.pocetnaTacka){
+            if(i.daLiPocetnaTackaPripada && daLiKrajnjaTackaPripada)
+                return new Interval(i.pocetnaTacka,krajnjaTacka,true,true);
+
+            if(!i.daLiPocetnaTackaPripada && daLiKrajnjaTackaPripada)
+                return new Interval(i.pocetnaTacka,krajnjaTacka,false,true);
+
+            if(i.daLiPocetnaTackaPripada && !daLiKrajnjaTackaPripada)
+                return new Interval(i.pocetnaTacka,krajnjaTacka,true, false);
+
+            return new Interval(i.pocetnaTacka,krajnjaTacka,false,false);
+        }
+
+        if(daLiPocetnaTackaPripada && i.daLiKrajnjaTackaPripada)
+            return new Interval(pocetnaTacka,i.krajnjaTacka,true,true);
+
+        if(!daLiPocetnaTackaPripada && i.daLiKrajnjaTackaPripada)
+            return new Interval(pocetnaTacka,i.krajnjaTacka,false,true);
+
+        if(daLiPocetnaTackaPripada && !i.daLiKrajnjaTackaPripada)
+            return new Interval(pocetnaTacka,i.krajnjaTacka,true, false);
+
+        return new Interval(pocetnaTacka,krajnjaTacka,false,false);
+
+
 
     }
 

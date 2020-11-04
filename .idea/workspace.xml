@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdf779fa-afed-4ca2-a5c8-bf9b58aa3217" name="Default Changelist" comment="Dodana implementacija preklopljene metode equals">
+    <list default="true" id="bdf779fa-afed-4ca2-a5c8-bf9b58aa3217" name="Default Changelist" comment="Dodana implementacija preklopljene metode toString">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/rpr-t2-z2/ba/unsa/etf/rpr/tutorijal02/Interval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-t2-z2/ba/unsa/etf/rpr/tutorijal02/Interval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/rpr-t2-z2/ba/unsa/etf/rpr/tutorijal02/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/rpr-t2-z2/ba/unsa/etf/rpr/tutorijal02/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal02/Interval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal02/Interval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal02/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,19 +62,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in rpr-t2-z2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpr-t2-z2" />
       <option name="PACKAGE_NAME" value="" />
@@ -101,7 +88,8 @@
       <workItem from="1604419690711" duration="1352000" />
       <workItem from="1604431146978" duration="1212000" />
       <workItem from="1604437701687" duration="2585000" />
-      <workItem from="1604473774323" duration="917000" />
+      <workItem from="1604473774323" duration="3463000" />
+      <workItem from="1604479251757" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="Dodan konstruktor za klasu Interval.java">
       <created>1604420052453</created>
@@ -152,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604439792702</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Dodana implementacija preklopljene metode toString">
+      <created>1604474713321</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604474713321</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,45 +173,46 @@
     <MESSAGE value="Dodana metoda isIn()" />
     <MESSAGE value="Dopunjena metoda isIn()" />
     <MESSAGE value="Dodana implementacija preklopljene metode equals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodana implementacija preklopljene metode equals" />
+    <MESSAGE value="Dodana implementacija preklopljene metode toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodana implementacija preklopljene metode toString" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1604439858625">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604439858625" />
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom" timestamp="1604474558716">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1604477245297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604474558716" />
-    <state width="1493" height="216" key="GridCell.Tab.0.center" timestamp="1604474558716">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604477245297" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1604477245297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604474558716" />
-    <state width="1493" height="216" key="GridCell.Tab.0.left" timestamp="1604474558716">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604477245297" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1604477245297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604474558716" />
-    <state width="1493" height="216" key="GridCell.Tab.0.right" timestamp="1604474558716">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604477245297" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1604477245297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="216" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604474558716" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1604474498816">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604477245297" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1604477245298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604474498816" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1604474498816">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604477245298" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1604477245298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1604474498816" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1604474498816">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1604477245298" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1604477245298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1604474498816" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1604474498816">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1604477245298" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1604477245298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1604474498816" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1604477245298" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1604420648434">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
