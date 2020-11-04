@@ -120,10 +120,97 @@ public class Interval {
 
         if(daLiPocetnaTackaPripada && !i.daLiKrajnjaTackaPripada)
             return new Interval(pocetnaTacka,i.krajnjaTacka,true, false);
+        return new Interval(pocetnaTacka,i.krajnjaTacka,false,false);
 
-        return new Interval(pocetnaTacka,krajnjaTacka,false,false);
+    }
 
+    public static Interval intersect(Interval i1, Interval i2){
 
+        if(i2.krajnjaTacka<i1.pocetnaTacka || i1.krajnjaTacka<i2.pocetnaTacka) return new Interval(); // intervali se ne presijecaju
+
+        if(i2.pocetnaTacka==i1.pocetnaTacka && i2.krajnjaTacka==i1.krajnjaTacka){ //intervali se poklapaju
+
+            if(i2.daLiPocetnaTackaPripada && i1.daLiPocetnaTackaPripada && i2.daLiKrajnjaTackaPripada && i1.daLiKrajnjaTackaPripada)
+                return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,true,true);
+
+            if((!i2.daLiPocetnaTackaPripada || i1.daLiPocetnaTackaPripada) && i2.daLiKrajnjaTackaPripada && i1.daLiKrajnjaTackaPripada)
+                return  new Interval(i2.pocetnaTacka,i2.krajnjaTacka,false, true);
+
+            if(i2.daLiPocetnaTackaPripada && i1.daLiPocetnaTackaPripada && (!i2.daLiKrajnjaTackaPripada || !i1.daLiKrajnjaTackaPripada))
+                return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,true, false);
+
+            return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,false,false);
+        }
+
+        if(i2.krajnjaTacka==i1.pocetnaTacka){
+
+            if(i2.daLiKrajnjaTackaPripada && i1.daLiPocetnaTackaPripada)
+                return new Interval(i1.pocetnaTacka,i2.krajnjaTacka, true, true);
+
+            return new Interval(i1.pocetnaTacka,i2.krajnjaTacka, false,false);
+        }
+
+        if(i1.krajnjaTacka==i2.pocetnaTacka){
+
+            if(i1.daLiKrajnjaTackaPripada && i2.daLiPocetnaTackaPripada)
+                return new Interval(i2.pocetnaTacka,i1.krajnjaTacka, true, true);
+
+            return new Interval(i2.pocetnaTacka,i1.krajnjaTacka, false,false);
+        }
+
+        if(i2.pocetnaTacka>i1.pocetnaTacka && i2.krajnjaTacka<i1.krajnjaTacka){
+
+            if(i2.daLiPocetnaTackaPripada  && i2.daLiKrajnjaTackaPripada )
+                return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,true,true);
+
+            if( !i2.daLiPocetnaTackaPripada &&  i2.daLiKrajnjaTackaPripada)
+                return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,false,true);
+
+            if( i2.daLiPocetnaTackaPripada && !i2.daLiKrajnjaTackaPripada)
+                return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,true,false);
+
+            return new Interval(i2.pocetnaTacka,i2.krajnjaTacka,false,false);
+
+        }
+
+        if(i2.pocetnaTacka<i1.pocetnaTacka && i2.krajnjaTacka>i1.krajnjaTacka){
+
+            if(i1.daLiPocetnaTackaPripada &&  i1.daLiKrajnjaTackaPripada)
+                return new Interval(i1.pocetnaTacka,i1.krajnjaTacka,true,true);
+
+            if(!i1.daLiPocetnaTackaPripada  && i1.daLiKrajnjaTackaPripada )
+                return new Interval(i1.pocetnaTacka,i1.krajnjaTacka,false,true);
+
+            if(i1.daLiPocetnaTackaPripada && !i1.daLiKrajnjaTackaPripada )
+                return new Interval(i1.pocetnaTacka,i1.krajnjaTacka,true,false);
+
+            return new Interval(i1.pocetnaTacka,i1.krajnjaTacka,false,false);
+
+        } // dva slučaja kada je jedan interval podinterval drugog
+
+        if(i2.pocetnaTacka<i1.pocetnaTacka){
+            if(i1.daLiPocetnaTackaPripada && i2.daLiKrajnjaTackaPripada)
+                return new Interval(i1.pocetnaTacka,i2.krajnjaTacka,true,true);
+
+            if(!i1.daLiPocetnaTackaPripada && i2.daLiKrajnjaTackaPripada)
+                return new Interval(i1.pocetnaTacka,i2.krajnjaTacka,false,true);
+
+            if(i1.daLiPocetnaTackaPripada && !i2.daLiKrajnjaTackaPripada)
+                return new Interval(i1.pocetnaTacka,i2.krajnjaTacka,true, false);
+
+            return new Interval(i1.pocetnaTacka,i2.krajnjaTacka,false,false);
+        }
+
+        if(i2.daLiPocetnaTackaPripada && i1.daLiKrajnjaTackaPripada)
+            return new Interval(i2.pocetnaTacka,i1.krajnjaTacka,true,true);
+
+        if(!i2.daLiPocetnaTackaPripada && i1.daLiKrajnjaTackaPripada)
+            return new Interval(i2.pocetnaTacka,i1.krajnjaTacka,false,true);
+
+        if(i2.daLiPocetnaTackaPripada && !i1.daLiKrajnjaTackaPripada)
+            return new Interval(i2.pocetnaTacka,i1.krajnjaTacka,true, false);
+
+        return new Interval(i2.pocetnaTacka,i1.krajnjaTacka,false,false);
 
     }
 
